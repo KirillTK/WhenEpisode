@@ -25,7 +25,7 @@ router.get('/getTvInfo/:id', (req, res, next) => {
   });
 });
 
-router.get('/getTvEpisodes/:id', async (req, res, next) => {
+router.get('/getTvEpisodes/:id', async (req, res) => {
   const { id } = req.params;
   const serialResponse = await rp(`https://api.themoviedb.org/3/tv/${id}?api_key=${apiKey}&language=en-US`);
   const serial = JSON.parse(serialResponse);
