@@ -13,11 +13,13 @@ mongoose.Promise = Promise;
 mongoose
   .connect(mongooseConfig.connectionString, { useNewUrlParser: true }).then(() => console.log('Mongoose up!'));
 
+require('./passport')(passport);
+
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(passport.initialize());
 app.use(passport.session());
-// require('./api/user')(app, passport);
+require('./api/user')(app, passport);
 
 
 server.listen(3000, () => console.log('listen 3000 port'));
