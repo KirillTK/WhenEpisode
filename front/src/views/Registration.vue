@@ -24,8 +24,8 @@
 
         <div class="double_item">
           <md-field :class="getValidationClass('gender')">
-            <label for="gender">Gender</label>
-            <md-select name="gender" id="gender" v-model="form.gender" md-dense :disabled="sending">
+            <label>Gender</label>
+            <md-select name="gender" v-model="form.gender" md-dense :disabled="sending">
               <md-option value="M">Male</md-option>
               <md-option value="F">Female</md-option>
             </md-select>
@@ -40,6 +40,13 @@
           </md-field>
         </div>
 
+        <md-field :class="getValidationClass('nickName')">
+          <label for="nick-name">Nick name</label>
+          <md-input name="nick-name" id="nick-name" autocomplete="nick-name" v-model="form.nickName"
+                    :disabled="sending"/>
+          <span class="md-error" v-if="!$v.form.nickName.required">Nick name is required</span>
+          <span class="md-error" v-else-if="!$v.form.nickName.minLength">Invalid nick name</span>
+        </md-field>
 
         <md-field :class="getValidationClass('email')">
           <label for="email">Email</label>
@@ -49,14 +56,12 @@
           <span class="md-error" v-else-if="!$v.form.email.email">Invalid email</span>
         </md-field>
 
-        <md-field :class="getValidationClass('nickName')">
-          <label for="nick-name">Nick name</label>
-          <md-input name="nick-name" id="nick-name" autocomplete="nick-name" v-model="form.nickName"
-                    :disabled="sending"/>
-          <span class="md-error" v-if="!$v.form.nickName.required">Nick name is required</span>
-          <span class="md-error" v-else-if="!$v.form.nickName.minLength">Invalid nick name</span>
+        <md-field :class="getValidationClass('password')">
+            <label>Password toggle</label>
+            <md-input v-model="form.password" type="password" autocomplete="password" ></md-input>
+          <span class="md-error" v-if="!$v.form.password.required">Password is required</span>
+          <span class="md-error" v-else-if="!$v.form.password.minLength">Invalid password</span>
         </md-field>
-
 
         <md-progress-bar md-mode="indeterminate" v-if="sending"/>
 
@@ -88,7 +93,8 @@
         gender: null,
         age: null,
         email: null,
-        nickName: null
+        nickName: null,
+        password: null
       },
       userSaved: false,
       sending: false,
@@ -119,6 +125,10 @@
           required,
           minLength: minLength(3)
         },
+        password: {
+          required,
+          minLength: minLength(6)
+        }
       }
     },
     methods: {
@@ -182,10 +192,6 @@
   .double_item div:last-child {
     width: 50%;
     margin-left: 10px;
-  }
-
-  form {
-
   }
 
   .card {
