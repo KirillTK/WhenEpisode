@@ -15,23 +15,20 @@
       </div>
     </md-toolbar>
 
-    <TopList/>
+    <router-view/>
 
   </div>
 </template>
 
 <script>
 
-
-  import TopList from "./components/TopList";
   import Search from "./components/Search";
 
   export default {
 
     name: 'app',
     components: {
-      Search,
-      TopList
+      Search
     }
   }
 </script>
