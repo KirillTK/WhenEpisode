@@ -1,6 +1,7 @@
 import Vue from 'vue'
-import TopList from "../components/TopList";
+import TopList from "../views/TopList";
 import VueRouter from 'vue-router'
+import Registration from "../views/Registration";
 
 Vue.use(VueRouter);
 
@@ -8,6 +9,10 @@ const routes = [
   {
     path: '/',
     component: TopList
+  },
+  {
+    path: '/registration',
+    component: Registration
   },
   {
     path: '*',
