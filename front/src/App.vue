@@ -9,7 +9,7 @@
         <Search/>
 
         <div class="md-toolbar-section-end">
-          <md-button to="/components/button">Sign in</md-button>
+          <md-button to="/login">Sign in</md-button>
           <md-button to="/registration" class="md-primary">Sign up</md-button>
         </div>
       </div>
