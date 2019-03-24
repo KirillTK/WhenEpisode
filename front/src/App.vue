@@ -1,28 +1,44 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <md-toolbar class="md-accent">
+      <div class="md-toolbar-row">
+        <div class="md-toolbar-section-start">
+          <h1 class="md-title">App</h1>
+        </div>
+
+        <Search/>
+
+        <div class="md-toolbar-section-end">
+          <md-button to="/components/button">Sign in</md-button>
+          <md-button to="/components/button" class="md-primary">Sign up</md-button>
+        </div>
+      </div>
+    </md-toolbar>
+
+    <TopList/>
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
+
+  import TopList from "./components/TopList";
+  import Search from "./components/Search";
+
+  export default {
+
+    name: 'app',
+    components: {
+      Search,
+      TopList
+    }
   }
-}
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  }
+
 </style>

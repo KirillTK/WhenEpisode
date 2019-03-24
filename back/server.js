@@ -6,6 +6,7 @@ const passport = require('passport');
 const cookieParser = require('cookie-parser');
 const mongooseConfig = require('./configurations/mongooseConfig');
 const serial = require('./api/serial');
+const cors = require('cors');
 
 const app = express();
 const server = http.createServer(app);
@@ -15,11 +16,12 @@ mongoose
   .connect(mongooseConfig.connectionString, { useNewUrlParser: true }).then(() => console.log('Mongoose up!'));
 
 require('./passport')(passport);
-
+app.use(cors());
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(passport.initialize());
 app.use(passport.session());
+
 app.use('/api', serial);
 require('./api/user')(app, passport);
 
