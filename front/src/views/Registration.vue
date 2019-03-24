@@ -49,9 +49,9 @@
           <span class="md-error" v-else-if="!$v.form.email.email">Invalid email</span>
         </md-field>
 
-        <md-field :class="getValidationClass('firstName')">
-          <label for="first-name">Nick name</label>
-          <md-input name="first-name" id="nick-name" autocomplete="nick-name" v-model="form.nickName"
+        <md-field :class="getValidationClass('nickName')">
+          <label for="nick-name">Nick name</label>
+          <md-input name="nick-name" id="nick-name" autocomplete="nick-name" v-model="form.nickName"
                     :disabled="sending"/>
           <span class="md-error" v-if="!$v.form.nickName.required">Nick name is required</span>
           <span class="md-error" v-else-if="!$v.form.nickName.minLength">Invalid nick name</span>
@@ -138,13 +138,15 @@
         this.form.age = null;
         this.form.gender = null;
         this.form.email = null;
+        this.form.nickName = null;
       },
       saveUser() {
         this.sending = true;
+        this.userSaved = true;
 
         window.setTimeout(() => {
           this.lastUser = `${this.form.firstName} ${this.form.lastName}`;
-          this.userSaved = true;
+          this.userSaved = false;
           this.sending = false;
           this.clearForm()
         }, 1500)
