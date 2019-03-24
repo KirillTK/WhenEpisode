@@ -39,4 +39,12 @@ router.get('/getTvEpisodes/:id', async (req, res) => {
   res.send(result);
 });
 
+router.get('/getTopRatedSeries', (req, res, next) => {
+
+  request(`https://api.themoviedb.org/3/tv/top_rated?api_key=${apiKey}&language=en-US`, (error, response, body) => {
+    if (error) next();
+    res.send(JSON.parse(body));
+  });
+});
+
 module.exports = router;
