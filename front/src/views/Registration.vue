@@ -60,7 +60,7 @@
 
         <md-progress-bar md-mode="indeterminate" v-if="sending"/>
 
-        <md-button type="submit" class="md-primary" :disabled="sending">Create user</md-button>
+        <md-button type="submit" class="md-accent" :disabled="sending">Create user</md-button>
 
         <md-snackbar :md-active.sync="userSaved">The user {{ lastUser }} was saved with success!</md-snackbar>
       </section>
@@ -187,8 +187,12 @@
   }
 
   .card {
+    padding: 20px;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
+    -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+    -moz-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
   }
 </style>
