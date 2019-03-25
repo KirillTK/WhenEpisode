@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="search">
     <md-autocomplete
             class="search"
             v-model="selectedShow"
@@ -23,5 +23,11 @@
 </script>
 
 <style scoped>
+
+  @media only screen and (max-device-width: 600px){
+    .search {
+      width: 130px;
+    }
+  }
 
 </style>

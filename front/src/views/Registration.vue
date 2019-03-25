@@ -203,4 +203,16 @@
     -moz-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
   }
+
+  @media only screen and (max-device-width: 600px){
+    .double_item {
+      display: block;
+    }
+
+    .double_item div:last-child {
+      width: 100%;
+      margin-left: 0;
+    }
+
+  }
 </style>
