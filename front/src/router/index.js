@@ -3,6 +3,7 @@ import TopList from "../views/TopList";
 import VueRouter from 'vue-router'
 import Registration from "../views/Registration";
 import Login from "../views/Login";
+import Show from "../views/Show";
 
 Vue.use(VueRouter);
 
@@ -18,6 +19,10 @@ const routes = [
   {
     path: '/login',
     component: Login
+  },
+  {
+    path: '/tv/:id',
+    component: Show
   },
   {
     path: '*',
