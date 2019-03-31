@@ -70,7 +70,6 @@
     async created() {
       this.tvShow = await this.getShowInfo();
       this.isLoaded = !!this.tvShow;
-      console.log(this.tvShow);
     },
   }
 
