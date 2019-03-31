@@ -119,6 +119,7 @@
   .action {
     display: flex;
     flex-wrap: nowrap;
+    justify-content: space-between;
     margin-top: 20px;
     width: 40%;
   }
@@ -139,9 +140,6 @@
   .favourite {
     color: red !important;
   }
-
-
-
 
 
   .crew {
