@@ -156,6 +156,25 @@
     margin-right: 20px;
   }
 
+
+  @media (max-width:990px) {
+    .poster {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 90%;
+    }
+
+    .poster img {
+      width: 35%;
+    }
+
+    .action {
+      justify-content: center;
+    }
+  }
+
+
   @media only screen and (max-device-width: 600px){
     .poster {
       display: flex;
@@ -164,6 +183,9 @@
       width: 90%;
     }
 
+    .poster img {
+      width: 50%;
+    }
   }
 
 </style>
